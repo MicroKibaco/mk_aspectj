@@ -15,13 +15,13 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.aspectJ_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.e("MainActivity", "onClick");
             }
         });
     }
 
 
-    public void testAop(){
-        Log.e("MainActivity","原有代码");
+    public void testAop() {
+        Log.e("MainActivity", "原有代码");
     }
 }
