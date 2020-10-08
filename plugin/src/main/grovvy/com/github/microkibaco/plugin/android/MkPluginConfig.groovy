@@ -1,7 +1,8 @@
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-public class MkAspectjPlugin implements Plugin<Project> {
+class MkPluginConfig implements Plugin<Project>{
+    boolean debug;
 
     @Override
     void apply(Project project) {
@@ -9,12 +10,14 @@ public class MkAspectjPlugin implements Plugin<Project> {
         print("This is my first PUGIN")
 
         project.task('My-Plugin-Task') << {
+            print("This is my first PUGIN")
+        }
 
-            print("This is my first Task")
+        project.afterEvaluate {
+
+            print("debug=" + project.sensorsData.debug)
 
         }
 
     }
-
-
 }

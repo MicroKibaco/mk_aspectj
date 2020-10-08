@@ -1,3 +1,4 @@
+include ':autotrace_sdk'
 include ':plugin'
 include ':app'
 rootProject.name = "mk_aspectj"
