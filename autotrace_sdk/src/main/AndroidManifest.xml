@@ -1,5 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.github.microkibaco.autotrace_sdk">
-
-    /
-</manifest>
+    package="com.github.microkibaco.autotrace.sdk" />

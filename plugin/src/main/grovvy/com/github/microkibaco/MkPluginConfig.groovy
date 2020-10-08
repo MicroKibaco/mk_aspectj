@@ -1,7 +1,8 @@
+package com.github.microkibaco
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-class MkPluginConfig implements Plugin<Project>{
+public class MkPluginConfig implements Plugin<Project>{
     boolean debug;
 
     @Override

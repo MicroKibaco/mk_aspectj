@@ -1,4 +1,4 @@
-package com.github.microkibaco.plugin.android
+package com.github.microkibaco
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
