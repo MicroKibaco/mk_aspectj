@@ -19,6 +19,8 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.github.microkibaco.autotrace.SensorsDataAPI;
+import com.github.microkibaco.autotrace.SensorsDataTrackViewOnClick;
 import com.github.microkibaco.mk_aspectj.databinding.ActivityMainBinding;
 
 import org.json.JSONObject;
@@ -232,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 通过 ButterKnife 绑定事件
      */
-    @OnClick({R.id.butterknife})
+    @OnClick({R2.id.butterknife})
     public void butterKnifeButtonOnClick(View view) {
         showToast("Butter Knife OnClick");
     }

@@ -1,27 +1,12 @@
 package com.github.microkibaco.mk_aspectj;
 
-import android.util.Log;
-
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.reflect.MethodSignature;
-
-import java.lang.reflect.Method;
-
 /**
  * @author 杨正友(小木箱)于 2020/10/7 15 18 创建
  * @Email: yzy569015640@gmail.com
  * @Tel: 18390833563
  * @function description:
  */
-
+/*
 @Aspect
 public class MkOnClickListenerAspectJ {
 
@@ -119,5 +104,5 @@ public class MkOnClickListenerAspectJ {
 
 
 
-}
+}*/
 

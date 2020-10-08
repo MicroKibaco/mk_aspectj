@@ -2,7 +2,8 @@ package com.github.microkibaco.mk_aspectj;
 
 import android.app.Application;
 
-import com.github.microkibaco.autotrace_sdk.SensorsReporter;
+import com.github.microkibaco.autotrace.SensorsDataAPI;
+
 
 /**
  * @author 杨正友(小木箱)于 2020/10/8 13 20 创建
@@ -16,7 +17,7 @@ public class MkApplication extends Application {
         super.onCreate();
 
         // 初始化埋点 SDK
-        SensorsReporter.init(this);
+        SensorsDataAPI.init(this);
     }
 
 
