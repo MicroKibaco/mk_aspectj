@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject p = new JSONObject();
                     if (!TextUtils.isEmpty(etSearch.getText())) {
-                        p.put("searchKey", etSearch.getText().toString());
+                        p.put("searchKey", Objects.requireNonNull(etSearch.getText()).toString());
                         SensorsDataAPI.getInstance().setViewProperties(button, p);
                     }
                 } catch (Exception e) {

@@ -15,9 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * Created by 王灼洲 on 2018/7/22
+ * 小木箱
  */
-@Keep
 public class SensorsDataAPI {
     private final String TAG = this.getClass().getSimpleName();
     public static final String SDK_VERSION = "1.0.0";

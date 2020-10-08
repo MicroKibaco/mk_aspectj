@@ -297,7 +297,7 @@ import androidx.appcompat.widget.SwitchCompat;
     }
 
     @Keep
-    protected static void trackViewOnClick(AdapterView adapterView, android.view.View view, int position) {
+    protected static void trackViewOnClick(AdapterView adapterView, View view, int position) {
         try {
             Context context = adapterView.getContext();
             if (context == null) {
