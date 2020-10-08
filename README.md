@@ -70,7 +70,7 @@ AOP 维基百科是这么说的?
        
 &emsp;&emsp;掌握这些基础知识,AOP差不多就学会了,等等,这么快就学会了,不是还没走源码嘛,这个Spring我也没有太多研究过,后面有机会再和大伙过一遍,我们开始直接正入主题,进入我们的Title AspectJ 吧 ,学习 AspectJ 有一个很重要的基础,就是得了解AspectJ 注解,常见的切点表达式,只有这样,才能正确使用AspectJ,基于自定义Gradle Plugin 实现代码织入等一系列好玩的事情。
 
-### 二. AspectJ
+## 二. AspectJ
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f05f19426d6455ba8682411b2c51cdb~tplv-k3u1fbpfcp-zoom-1.image)
 #### 2.0.1 AspectJ 注解
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8223ca3b794e4f29bb1ab1630cce9cf0~tplv-k3u1fbpfcp-zoom-1.image)
@@ -277,29 +277,29 @@ public aspect A {
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/62dde1f3aada495b8a585b95eb9065d4~tplv-k3u1fbpfcp-zoom-1.image)
   - 删除不用的src文件 之类的
   
-#### 2.0.6.3 创建 grovvy 目录 
+##### 2.0.6.3 创建 grovvy 目录 
 - 因为开发是基于 Groovy 语言的,所以插件 的代码放在 src/main/groovy 目录下,然后在该目录新建一个pageage,命名为: com.github.microkibaco.plugin.android
 
-#### 2.0.6.4 创建 properties 文件
+##### 2.0.6.4 创建 properties 文件
 
 - 在 src/main 目录下,一次创建 resource/META-INFgradle-plugins 文件,在创建一个 后缀为.properties  的文件,用来声明名称以及对于常见的包名
    - 比如我创建了 com.github.microkibaco.properties
    ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4ab79a9b4baa400fb877916be8f66b06~tplv-k3u1fbpfcp-zoom-1.image)
 
-#### 2.0.6.5 添加依赖关系
+##### 2.0.6.5 添加依赖关系
 
 - 修改 plugin/build.gradle 文件 对 gradle ,grovvy 的依赖
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f56063ae79e242ed90c5c5032d7169e6~tplv-k3u1fbpfcp-zoom-1.image)
 
-#### 2.0.6.6 实现插件
+##### 2.0.6.6 实现插件
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/66898fd631f1459f968621c6c2473159~tplv-k3u1fbpfcp-zoom-1.image)
 
-#### 2.0.6.7 修改 .properties 文件
+##### 2.0.6.7 修改 .properties 文件
  - implementation-class= 包名 + 类名
    - implementation-class=com.github.microkibaco.plugin.android.MkAspectjPlugin
  - 编译这个 plugin,可以在 plugin/build 发现新生成的插件 .jar 文件![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/48b6acbfc2f54109aee058fc26f7a3b6~tplv-k3u1fbpfcp-zoom-1.image)![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1f8a3b50f2b245cc9f30582c3f15dd84~tplv-k3u1fbpfcp-zoom-1.image)  
  
- ### 2.0.7 发布 Gradle 插件
+#### 2.0.7 发布 Gradle 插件
  - 2.0.7.1  发布方式
    - 发布插件到本地仓库
    	- 1. 引入 mavenDeployer 插件
@@ -309,13 +309,12 @@ public aspect A {
             - version 项目或模块的当前版本包
     	- 2. 编译插件![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/295f2289f26d4b9aa405fbf3084878ed~tplv-k3u1fbpfcp-zoom-1.image)![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4119c262e94d48d6af17cf2a2dd0e3c0~tplv-k3u1fbpfcp-zoom-1.image)![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d9f6a2cd8334624a16c1e90af53f36c~tplv-k3u1fbpfcp-zoom-1.image)
    - 发布插件到远程仓库
-### 2.0.8 使用 Gradle Plugin
 
 #### 2.0.8 使用 Gradle Plugin
 - 修改 Project/build.gradle 配置,格式为: groupId.artfactId:version![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9c7aeb4315454f4fb660a5bd7d02a1e5~tplv-k3u1fbpfcp-zoom-1.image)
 - 修改 app/build.gradle 格式为 resource/META-INFgradle-plugins  .properties前缀文件名
-### 2.0.9 Plugin Project![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/79cfd2f733f3408fb68bf28b76f2fedc~tplv-k3u1fbpfcp-zoom-1.image)![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb2fe4cf94724546a6ebdb50f02b508f~tplv-k3u1fbpfcp-zoom-1.image)
-### 2.1.0 核心思想
+#### 2.0.9 Plugin Project![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/79cfd2f733f3408fb68bf28b76f2fedc~tplv-k3u1fbpfcp-zoom-1.image)![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb2fe4cf94724546a6ebdb50f02b508f~tplv-k3u1fbpfcp-zoom-1.image)
+#### 2.1.0 核心思想
 - 最核心的模块是 ajc 编译器,它其实就是将 AspectJ 代码在编译期 插入目标程序当中,使用 AspectJ 最关键的是使用 ajc 编译器 , 编译器将 AspectJ 代码插入切出来的 PointCut 中,达到AOP 目的![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4e6b6f246c30415ea725e89b38618740~tplv-k3u1fbpfcp-zoom-1.image)
 ## 三. AspectJ 全埋点实现
 ### 3.1 AspectJ 全埋点原理![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/931c7bdc07804c149837b47b0edcad0b~tplv-k3u1fbpfcp-zoom-1.image)
@@ -324,10 +323,386 @@ public aspect A {
     - AspectJ 的处理脚本放到我们的自定义插件里,编写相应的切面类没在定义合适的 PointCut 用来匹配我们织入目标方法,如 onClick ,这样就可以在编译期插入埋点代码
     
 ### 3.2 AspectJ 全埋点实现过程    
+#### 3.2.1 创建 autotrace_sdk Android moudle
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/66b1b809c76f44029adb36888daffc6c~tplv-k3u1fbpfcp-zoom-1.image)
+#### 3.2.2 编写埋点SDK
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc30feeb81244b6095faeb293b1d293c~tplv-k3u1fbpfcp-zoom-1.image)
+#### 3.2.3 新增 init 初始化方法
+初始化埋点SDK,一般在Application使用
+#### 3.2.4 getInstance
+获取埋点SDK实例对象
+####  3.2.5 添加依赖关系
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/911381fcc80c47d9a4334a71975c8404~tplv-k3u1fbpfcp-zoom-1.image)
+
+####  3.2.6 初始化埋点SDK
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2f7bf2bf4c6444599ddcf70fa9a73e42~tplv-k3u1fbpfcp-zoom-1.image)
+
+####  3.2.6 声明自定义Application
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4fcddcba9b7b4da38e9368d88c353972~tplv-k3u1fbpfcp-zoom-1.image)
+
+####  3.2.7 获取重要的埋点信息
+##### 3.2.7.1 $element_id
+
+```java
+    /**
+     * 获取 view 的 anroid:id 对应的字符串
+     *
+     * @param view View
+     * @return String
+     */
+    private static String getViewId(View view) {
+        String idString = null;
+        try {
+            if (view.getId() != View.NO_ID) {
+                idString = view.getContext().getResources().getResourceEntryName(view.getId());
+            }
+        } catch (Exception e) {
+            //ignore
+        }
+        return idString;
+    }
+```
+
+
+##### 3.2.7.2 $activity
+
+```java
+    /**
+     * 获取 View 所属 Activity
+     *
+     * @param view View
+     * @return Activity
+     */
+    private static Activity getActivityFromView(View view) {
+        Activity activity = null;
+        if (view == null) {
+            return null;
+        }
+
+        try {
+            Context context = view.getContext();
+            if (context != null) {
+                if (context instanceof Activity) {
+                    activity = (Activity) context;
+                } else if (context instanceof ContextWrapper) {
+                    while (!(context instanceof Activity) && context instanceof ContextWrapper) {
+                        context = ((ContextWrapper) context).getBaseContext();
+                    }
+                    if (context instanceof Activity) {
+                        activity = (Activity) context;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return activity;
+    }
+    
+    // 调用
+     activity.getClass().getCanonicalName()
+   ```
+   ##### 3.2.7.2 $activity_title
+   
+   ```java
+       /**
+     * 获取 Activity 的 title
+     *
+     * @param activity Activity
+     * @return Activity 的 title
+     */
+    @androidx.annotation.RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private static String getActivityTitle(Activity activity) {
+        try {
+            if (activity != null) {
+                try {
+                    String activityTitle = null;
+                    if (!TextUtils.isEmpty(activity.getTitle())) {
+                        activityTitle = activity.getTitle().toString();
+                    }
+
+                    String toolbarTitle = getToolbarTitle(activity);
+                    if (!TextUtils.isEmpty(toolbarTitle)) {
+                        activityTitle = toolbarTitle;
+                    }
+
+                    if (TextUtils.isEmpty(activityTitle)) {
+                        PackageManager packageManager = activity.getPackageManager();
+                        if (packageManager != null) {
+                            ActivityInfo activityInfo = packageManager.getActivityInfo(activity.getComponentName(), 0);
+                            if (!TextUtils.isEmpty(activityInfo.loadLabel(packageManager))) {
+                                activityTitle = activityInfo.loadLabel(packageManager).toString();
+                            }
+                        }
+                    }
+
+                    return activityTitle;
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+        @androidx.annotation.RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private static String getToolbarTitle(Activity activity) {
+        try {
+            ActionBar actionBar = activity.getActionBar();
+            if (actionBar != null) {
+                if (!TextUtils.isEmpty(actionBar.getTitle())) {
+                    return actionBar.getTitle().toString();
+                }
+            } else {
+                if (activity instanceof AppCompatActivity) {
+                    AppCompatActivity appCompatActivity = (AppCompatActivity) activity;
+                    androidx.appcompat.app.ActionBar supportActionBar = appCompatActivity.getSupportActionBar();
+                    if (supportActionBar != null) {
+                        if (!TextUtils.isEmpty(supportActionBar.getTitle())) {
+                            return Objects.requireNonNull(supportActionBar.getTitle()).toString();
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+   ```  
+   
+   
+##### 3.2.7.2 $element_content
+
+   ```java
+    /**
+     * 支持 TabHost.OnTabChangeListener.onTabChanged(String)
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.widget.TabHost.OnTabChangeListener.onTabChanged(String))")
+    public void onTabChangedAop(final JoinPoint joinPoint) {
+        String tabName = (String) joinPoint.getArgs()[0];
+        SensorsDataPrivate.trackTabHost(tabName);
+    }
+```
+##### 3.2.7.3 自定义属性
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e83cd14bee92470c963280c83439382e~tplv-k3u1fbpfcp-zoom-1.image)
+   ```java
+       /**
+     * 设置View属性
+     *
+     * @param view       要设置的View
+     * @param properties 要设置的View的属性
+     */
+    public void setViewProperties(View view, JSONObject properties) {
+        if (view == null || properties == null) {
+            return;
+        }
+
+        view.setTag(R.id.sensors_analytics_tag_view_properties, properties);
+    }
+
+// 获取这个属性
+
+Object pObject = view.getTag(R.id.sensors_analytics_tag_view_properties);
+   ```
+
 ## 四. AspectJ 全埋点实现方案优化
+### 问题1: 无法采集通过 ButterKnife 的 @onClick 注解绑定的事件
+
+   ```java
+       /**
+     * 支持 ButterKnife @OnClick 注解
+     *
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(@butterknife.OnClick * *(android.view.View))")
+    public void onButterknifeClickAop(final JoinPoint joinPoint) {
+        View view = (View) joinPoint.getArgs()[0];
+        SensorsDataPrivate.trackViewOnClick(view);
+    }
+
+   ```
+   
+### 问题2: 无法采集通过 android:OnClick 属性绑定的事件
+
+   ```java
+   @Target({ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface SensorsDataTrackViewOnClick {
+}
+
+   ```
+   
+   
+   ```java
+       /**
+     * 支持 @SensorsDataTrackViewOnClick 注解
+     *
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(@com.sensorsdata.analytics.android.sdk.SensorsDataTrackViewOnClick * *(android.view.View))")
+    public void onTrackViewOnClickAop(final JoinPoint joinPoint) {
+        View view = (View) joinPoint.getArgs()[0];
+        SensorsDataPrivate.trackViewOnClick(view);
+    }
+
+   ```
+   
+### 问题3: 无法采集 MenuItem 的点击事件
+
+   ```java
+       /**
+     * 支持 onMenuItemSelected(int, android.view.MenuItem)
+     *
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.app.Activity.onMenuItemSelected(int, android.view.MenuItem))")
+    public void onMenuItemSelectedAop(JoinPoint joinPoint) {
+        MenuItem view = (MenuItem) joinPoint.getArgs()[1];
+        SensorsDataPrivate.trackViewOnClick(joinPoint.getTarget(), view);
+    }
+
+   ```
+   
 ## 五. AspectJ 扩展采集能力
+### 扩展1: 支持采集AlertDialog 的点击事件
+
+   ```java
+       /**
+     * 支持 DialogInterface.OnClickListener.onClick(android.content.DialogInterface, int)
+     *
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.content.DialogInterface.OnClickListener.onClick(android.content.DialogInterface, int))")
+    public void onDialogClickAop(final JoinPoint joinPoint) {
+        DialogInterface dialogInterface = (DialogInterface) joinPoint.getArgs()[0];
+        int which = (int) joinPoint.getArgs()[1];
+        SensorsDataPrivate.trackViewOnClick(dialogInterface, which);
+    }
+   ```
+   
+### 扩展2: 支持采集 CheckBox SwitchCompat RadioButton ,ToggleButton, RadioGroupp 等点击事件
+
+   ```java
+
+    /**
+     * 支持 CompoundButton.OnCheckedChangeListener.onCheckedChanged(android.widget.CompoundButton,boolean)
+     *
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.widget.CompoundButton.OnCheckedChangeListener.onCheckedChanged(android.widget.CompoundButton,boolean))")
+    public void onCheckedChangedAop(final JoinPoint joinPoint) {
+        CompoundButton compoundButton = (CompoundButton) joinPoint.getArgs()[0];
+        boolean isChecked = (boolean) joinPoint.getArgs()[1];
+        SensorsDataPrivate.trackViewOnClick(compoundButton, isChecked);
+    }
+   ```
+   
+### 扩展3: 支持采集 RattingButton 的点击事件
+
+   ```java
+       /**
+     * 支持 RatingBar.OnRatingBarChangeListener.onRatingChanged(android.widget.RatingBar,float,boolean)
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.widget.RatingBar.OnRatingBarChangeListener.onRatingChanged(android.widget.RatingBar,float,boolean))")
+    public void onRatingBarChangedAop(final JoinPoint joinPoint) {
+        View view = (View) joinPoint.getArgs()[0];
+        SensorsDataPrivate.trackViewOnClick(view);
+    }
+
+   ```
+   
+### 扩展4: 支持采集 SeekBar 的点击事件
+
+   ```java
+    /**
+     * 支持 SeekBar.OnSeekBarChangeListener.onStopTrackingTouch(android.widget.SeekBar)
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.widget.SeekBar.OnSeekBarChangeListener.onStopTrackingTouch(android.widget.SeekBar))")
+    public void onStopTrackingTouchMethod(JoinPoint joinPoint) {
+        View view = (View) joinPoint.getArgs()[0];
+        SensorsDataPrivate.trackViewOnClick(view);
+    }
+   ```
+   
+### 扩展5:  支持采集 Spinner 的点击事件
+
+   ```java
+      if (adapterView instanceof Spinner) {
+                properties.put("$element_type", "Spinner");
+                Object item = adapterView.getItemAtPosition(position);
+                if (item != null) {
+                    if (item instanceof String) {
+                        properties.put("$element_content", item);
+                    }
+                }
+            }
+   ```
+   
+### 扩展6: 支持采集 TabHost 的点击事件
+
+   ```java
+     /**
+     * 支持 TabHost.OnTabChangeListener.onTabChanged(String)
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.widget.TabHost.OnTabChangeListener.onTabChanged(String))")
+    public void onTabChangedAop(final JoinPoint joinPoint) {
+        String tabName = (String) joinPoint.getArgs()[0];
+        SensorsDataPrivate.trackTabHost(tabName);
+    }
+   ```
+   
+### 扩展7: 支持采集 ListView GrildView的点击事件
+
+   ```java
+       /**
+     * public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id)
+     *
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.widget.ExpandableListView.OnChildClickListener.onChildClick(android.widget.ExpandableListView, android.view.View, int, int, long))")
+    public void onExpandableListViewChildClickAop(final JoinPoint joinPoint) {
+        ExpandableListView expandableListView = (ExpandableListView) joinPoint.getArgs()[0];
+        View view = (View) joinPoint.getArgs()[1];
+        int groupPosition = (int) joinPoint.getArgs()[2];
+        int childPosition = (int) joinPoint.getArgs()[3];
+        SensorsDataPrivate.trackExpandableListViewChildOnClick(expandableListView, view, groupPosition, childPosition);
+    }
+   ```
+   
+### 扩展8: 支持采集 ExpendableListView的点击事件
+
+   ```java
+   
+     /**
+     * public boolean onGroupClick(ExpandableListView expandableListView, View view, int groupPosition, long l)
+     *
+     * @param joinPoint JoinPoint
+     */
+    @After("execution(* android.widget.ExpandableListView.OnGroupClickListener.onGroupClick(android.widget.ExpandableListView, android.view.View, int, long))")
+    public void onExpandableListViewGroupClickAop(final JoinPoint joinPoint) {
+        ExpandableListView expandableListView = (ExpandableListView) joinPoint.getArgs()[0];
+        View view = (View) joinPoint.getArgs()[1];
+        int groupPosition = (int) joinPoint.getArgs()[2];
+        SensorsDataPrivate.trackExpandableListViewChildOnClick(expandableListView, view, groupPosition, -1);
+    }
+   ```
+   
 ## 六. AspectJ 的缺陷
 - 无法织入第三方库
 - 由于定义的切点以来编程语言,该方案无法兼容 Lambada 语法
 - 会有一些兼容问题,如: D8 Gradle 4.x 等等
 
+## 七. AspectJ 的商业价值
+&emsp;&emsp;学习一个新的技术,最重要的是考虑他自身所携带的业务属性,那么AspectJ在实际开发中到底有什么用呢?贴一张前同事整理的[脑图](https://juejin.im/user/2330620379534749),后期遇到以下问题,可以优先考虑用切面的思想解决
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ef2bc986bb164b8aab205852884503fa~tplv-k3u1fbpfcp-zoom-1.image)
+
+
+> 你的 点赞、评论，是对我的巨大鼓励！
