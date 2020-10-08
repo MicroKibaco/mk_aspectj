@@ -4,7 +4,7 @@ import android.app.Application;
 import android.util.Log;
 import android.view.View;
 
-import com.github.microkibaco.autotrace.sdk.R;
+import com.github.microkibaco.autotrace.autotrace.R;
 
 import org.json.JSONObject;
 

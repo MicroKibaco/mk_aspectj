@@ -36,7 +36,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.github.microkibaco.autotrace.sdk.R;
+import com.github.microkibaco.autotrace.autotrace.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
