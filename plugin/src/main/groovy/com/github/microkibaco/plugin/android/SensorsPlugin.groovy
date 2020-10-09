@@ -36,7 +36,7 @@ public class SensorsPlugin implements Plugin<Project> {
                 println("########                                                    ########")
                 println("########                                                    ########")
                 println("########                                                    ########")
-                println("########          使用过程中碰到任何问题请联系MicroKibsco        ########")
+                println("########          使用过程中碰到任何问题请联系MicroKibaco        ########")
                 println("########                                                    ########")
                 println("########                                                    ########")
                 println("####################################################################")
