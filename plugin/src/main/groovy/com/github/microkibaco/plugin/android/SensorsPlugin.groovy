@@ -1,4 +1,4 @@
-package com.github.microkibaco
+package com.github.microkibaco.plugin.android
 
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
